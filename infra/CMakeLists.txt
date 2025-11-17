@@ -52,6 +52,13 @@ target_compile_features(
     cxx_std_23
 )
 
+target_link_libraries(
+    ${PROJECT_NAME} 
+    PUBLIC 
+
+    glm::glm
+)
+
 set(
     PB_INFRA_PUBLIC_FILES 
 
@@ -60,6 +67,12 @@ set(
     # =========================
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/utility/guard.hpp
+
+    # =========================
+    # MATH
+    # =========================
+
+     ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/math/angle.hpp
 )
 
 set(
