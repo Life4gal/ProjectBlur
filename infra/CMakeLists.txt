@@ -73,6 +73,7 @@ set(
     # =========================
 
      ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/math/angle.hpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/math/position.hpp
 )
 
 set(
