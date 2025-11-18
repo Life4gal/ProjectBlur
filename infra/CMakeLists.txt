@@ -62,6 +62,8 @@ target_link_libraries(
 set(
     PB_INFRA_PUBLIC_FILES 
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/macro.hpp
+
     # =========================
     # GRAPHICS
     # =========================
@@ -92,12 +94,27 @@ set(
     ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/dimension.cache.inl
     ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/enumeration.hpp
 
+    # =========================
+    # PLATFORM
+    # =========================
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/platform/exception.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/platform/os.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/platform/environment.hpp
 )
 
 set(
     PB_INFRA_PRIVATE_FILES
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/dummy.cpp
+    
+    # =========================
+    # PLATFORM
+    # =========================
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/exception.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/os.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/environment.cpp
 )
 
 set_source_files_properties(
@@ -112,7 +129,7 @@ target_sources(
     PUBLIC
     FILE_SET public_header_files
     TYPE HEADERS
-    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}"
+    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include"
     FILES
     
     ${PB_INFRA_PUBLIC_FILES}
@@ -122,6 +139,17 @@ target_sources(
     ${PROJECT_NAME}
     PRIVATE
     ${PB_INFRA_PRIVATE_FILES}
+)
+
+target_sources(
+    ${PROJECT_NAME}
+    PUBLIC
+    FILE_SET macro_header_files
+    TYPE HEADERS
+    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    FILES
+    
+   ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/macro.hpp
 )
 
 set_target_properties(
