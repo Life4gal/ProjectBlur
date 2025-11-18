@@ -79,6 +79,19 @@ set(
 
      ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/math/angle.hpp
      ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/math/position.hpp
+    
+    # =========================
+    # META
+    # =========================
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/name.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/string.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/member.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/member.visit.inl
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/dimension.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/dimension.cache.inl
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/meta/enumeration.hpp
+
 )
 
 set(
