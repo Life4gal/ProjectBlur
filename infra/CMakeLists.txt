@@ -63,6 +63,11 @@ set(
     PB_INFRA_PUBLIC_FILES 
 
     # =========================
+    # GRAPHICS
+    # =========================
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/pb/graphics/color.hpp
+
+    # =========================
     # UTILITY
     # =========================
 
